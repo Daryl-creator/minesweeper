@@ -1,6 +1,11 @@
 html, body {
   height: 100%;
-  font-family: 'Open Sans', sans-serif
+  font-family: 'Open Sans', sans-serif;
+  background: url('background2.jpg') no-repeat 0 0 scroll;
+    background-color:#0C0C0C;
+    background-size: 100% 100%;
+    height:100%;
+    width:100%;
 }
 
 body {
@@ -44,7 +49,7 @@ body {
 }
 
 div.mine, div.mine:hover {
-  background: no-repeat center/60% url("images/bomb.svg") crimson;
+  background: no-repeat center/60% url("images/babyShark.jpg") white;
 }
 
 div.hidden {
