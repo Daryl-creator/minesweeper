@@ -111,6 +111,10 @@ function playWin() {
   var audio = new Audio('audio\babyshark.mp3');
     audio.play();
 }
+//win video
+function playVideo(){
+  document.getElementById('video').innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/j8z7UjET1Is?start=3&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+}
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
@@ -148,7 +152,7 @@ function checkForWin () {
   } 
   if(win == true ) {
       lib.displayMessage('You win!')
-      playBabyShark()
+      playVideo()
     //If every mine is marked, but there are still cells with the hidden property set to true, the player hasn't won yet and you can return out of the function.
     //If both these criteria pass, the player has won! There's a displayMessage function call at the bottom of checkForWin you can use to tell them so.
   // You can use this function call to declare a winner (once you've
