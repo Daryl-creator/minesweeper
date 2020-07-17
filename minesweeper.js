@@ -125,29 +125,31 @@ function startGame () {
     console.log(board)
   lib.initBoard()
   //assign left mouse click to call checkForWin
-  document.addEventListener("mousedown", checkForWin)
+  document.addEventListener("mousedown", callCheckForWin)
   //assign right mouse click to call checkForWin
-  document.addEventListener("contextmenu", checkForWin)
+  document.addEventListener("contextmenu", callCheckForWin)
 }
 
-
-
+function callCheckForWin(){
+  setTimeout(function(){ checkForWin() }, 100);
+}
 // Define this function to look for a win condition:
 //
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
 function checkForWin () {
-  var win = true;
+    var win = true;
     // loop through all of board.cells
     for (var i = 0; i < board.cells.length; i++) {
-    //For each cell, check to see if both .isMine and .isMarked are true. If any mine still exists that isn't marked, the player hasn't won yet and you can return to exit out of the function.
-    //check to see if cell is mine and if it is marked, why is.Marked false??
-    if (board['cells'][i].isMine == true && board['cells'][i].isMarked == false) {
-      win = false;
-      //check if cell is mine and is hidden, why is isMine !==true?
-    }
-     if (board['cells'][i].isMine != true && board['cells'][i].hidden == true) {
-      win = false;
+      //For each cell, check to see if both .isMine and .isMarked are true. If any mine still exists that isn't marked, the player hasn't won yet and you can return to exit out of the function.
+      //check to see if cell is mine and if it is marked, why is.Marked false??
+      if (board['cells'][i].isMine == true && board['cells'][i].isMarked == false) {
+        win = false;
+        //check if cell is mine and is hidden, why is isMine !==true?
+      }
+      if (board.cells[i].isMine == false && board.cells[i].hidden == true) {
+        console.log(board.cells[i]);
+        win = false;
       } 
   } 
   if(win == true ) {
