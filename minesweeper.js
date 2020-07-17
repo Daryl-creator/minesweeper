@@ -121,9 +121,9 @@ function startGame () {
     console.log(board)
   lib.initBoard()
   //assign left mouse click to call checkForWin
-  document.addEventListener(mousedown, checkForWin)
+  document.addEventListener("mousedown", checkForWin)
   //assign right mouse click to call checkForWin
-  document.addEventListener(contextmenu, checkForWin)
+  document.addEventListener("contextmenu", checkForWin)
 }
 
 
